@@ -21,3 +21,510 @@ export function getTodaysDate() {
     const deliveryDate = `${year}-${month}-${day}`;
     return deliveryDate;
 }
+
+export const expectedSchemas = [
+
+    {
+        "type": "object",
+        "properties": {
+            "data": {
+                "type": "object",
+                "items": {
+                    "deliveryId": {
+                        "type": "number"
+                    },
+                    "deliveryDate": {
+                        "type": "date"
+                    },
+                    "returnedOrders": {
+                        "type": "array"
+                    }
+                }
+            }
+        }
+    },
+
+    {
+        "type": "object",
+        "properties": {
+            "data": {
+                "type": "object",
+                "items": {
+                    "orderId": {
+                        "type": "number"
+                    }, 
+                    "orderDetailIds": {
+                        "type": "array"
+                    }
+                }
+            }
+        }
+    },
+
+    {
+        "type": "object",
+        "properties": {
+            "data": {
+                "type": "object",
+                "items": {
+                    "orderId": {
+                        "type": "number"
+                    },
+                    "deliveryId": {
+                        "type": "number"
+                    },
+                    "paymentType": {
+                        "type": "string"
+                    },
+                    "customerName": {
+                        "type": "string"
+                    },
+                    "customerAddress": {
+                        "type": "string"
+                    },
+                    "customerPhone": {
+                        "type": "string"
+                    },
+                    "orderNote": {
+                        "type": "object"
+                    },
+                    "orderStatus": {
+                        "type": "string"
+                    },
+                    "completionNote": {
+                        "type": "object"
+                    },
+                    "failureNote": {
+                        "type": "object"
+                    },
+                    "failureReason": {
+                        "type": "object"
+                    },
+                    "onfleetPickupTaskId": {
+                        "type": "object"
+                    },
+                    "onfleetDropoffTaskId": {
+                        "type": "object"
+                    },
+                    "paymentTotal": {
+                        "type": "string"
+                    },
+                    "latestChargeDate": {
+                        "type": "object"
+                    },
+                    "authStanIds": {
+                        "type": "string"
+                    },
+                    "detail": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "items": {
+                                "barcode": {
+                                    "type": "string"
+                                },
+                                "isRefrigerated": {
+                                    "type": "boolean"
+                                },
+                                "isNarcotics": {
+                                    "type": "boolean"
+                                },
+                                "price": {
+                                    "type": "string"
+                                },
+                                "orderDetailId": {
+                                    "type": "number"
+                                },
+                            }
+                        }
+                    },
+                    "time": {
+                        "type": "object"
+                    },
+                    "notes": {
+                        "type": "object"
+                    },
+                    "photoUpload": {
+                        "type": "object"
+                    },
+                    "signatureUpload": {
+                        "type": "object"
+                    },
+                }
+            }
+        }
+    },
+
+    {
+        "type": "object",
+        "properties": {
+            "data": {
+                "type": "object",
+                "properties": {
+                    "deliveryId":{
+                        "type": "string",
+                    },
+                    "deliveryDate": {
+                        "type": "string",
+                    },
+                    "deliveryStatus": {
+                        "type": "string",
+                    },
+                    "storeName": {
+                        "type": "string",
+                    },
+                    "orders": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "orderId": {
+                                    "type": "number"
+                                },
+                                "paymentType": {
+                                    "type": "string"
+                                },
+                                "customerName": {
+                                    "type": "string"
+                                },
+                                "customerPhone": {
+                                    "type": "string"
+                                },
+                                "customerAddress": {
+                                    "type": "string"
+                                },
+                                "latitude": {
+                                    "type": "string"
+                                },
+                                "longitude": {
+                                    "type": "string"
+                                },
+                                "orderNote": {
+                                    "type": "null"
+                                },
+                                "completionNote": {
+                                    "type": "null"
+                                },
+                                "failureNote": {
+                                    "type": "null"
+                                },
+                                "failureReason": {
+                                    "type": "null"
+                                },
+                                "orderStatus": {
+                                    "type": "string"
+                                },
+                                "paymentTotal": {
+                                    "type": "string"
+                                },
+                                "latestChargeDate": {
+                                    "type": "null"
+                                },
+                                "onfleetDropoffTaskId": {
+                                    "type": "null"
+                                },
+                                "squareObjectId": {
+                                    "type": "string"
+                                },
+                                "detail": {
+                                    "type": "array",
+                                    "items": {
+                                        "type":"object",
+                                        "properties":{
+                                            "barcode":{
+                                                "type": "string"
+                                            },
+                                            "isRefrigerated":{
+                                                "type": "boolean"
+                                            },
+                                            "isNarcotics":{
+                                                "type": "boolean"
+                                            },
+                                            "price":{
+                                                "type": "string"
+                                            },
+                                            "orderDetailId":{
+                                                "type": "number"
+                                            }
+                                        }
+                                    }
+                                },
+                                "completedFullNote": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "ordersCount": {
+                        "type":"object",
+                        "items": {
+                            "totalOrders":{
+                                "type": "string"
+                            }, 
+                            "totalReturns": {
+                                "type": "string"
+                            } 
+    
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    {
+        "type": "object",
+        "items": {
+            "data": {
+                "type": "object",
+                "items": {
+                    "deliveryId": {
+                        "type": "number"
+                    }, 
+                    "deliveryDate": {
+                        "type": "date"
+                    },
+                    "deliveryStatus": {
+                        "type": "string"
+                    },
+                    "onfleetPickupTaskId": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+
+    {
+        "type": "object",
+        "properties": {
+            "data": {
+                "type": "object",
+                "items": {
+                    "orderId": {
+                        "type": "number"
+                    }
+                }
+            }
+        }
+    }
+
+];
+
+export const expectedErrorSchemas = [
+
+    {
+        "type": "object",
+        "properties": {
+            "errors": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "string"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "detail": {
+                            "type": "string"
+                        },
+                        "source": {
+                            "type": "object",
+                            "properties": {
+                                "pointer": {
+                                    "type": "string"
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    {
+        "type": "object",
+        "properties": {
+            "errors": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "string"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "detail": {
+                            "type": "string"
+                        },
+                        "source": {
+                            "type": "object",
+                            "properties": {
+                                "pointer": {
+                                    "type": "string"
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    {
+        "type": "object",
+        "properties": {
+            "errors": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "string"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "detail": {
+                            "type": "string"
+                        },
+                        "source": {
+                            "type": "object",
+                            "properties": {
+                                "pointer": {
+                                    "type": "string"
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    {
+        "type": "object",
+        "properties": {
+            "errors": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "path": {
+                        "type": "string"
+                        },
+                        "message": {
+                        "type": "string"
+                        },
+                        "status": {
+                        "type": "string"
+                        },
+                        "source": {
+                        "type": "object",
+                            "properties": {
+                                "pointer": {
+                                    "type": "string"
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    {
+        "type": "object",
+        "properties": {
+            "errors": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "path": {
+                            "type": "string"
+                        },
+                        "message": {
+                            "type": "string"
+                        },
+                        "errorCode": {
+                            "type": "string"
+                        },
+                        "status": {
+                            "type": "string"
+                        },
+                        "source": {
+                            "type": "object",
+                            "properties": {
+                                "pointer": {
+                                    "type": "string"
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    {
+        "type": "object",
+        "properties": {
+            "errors": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "string"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "source": {
+                            "type": "object",
+                            "properties": {
+                                "pointer": {
+                                    "type": "string"
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    {
+        "type": "object",
+        "properties": {
+            "errors": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "string"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "source": {
+                            "type": "object",
+                            "properties": {
+                                "pointer": {
+                                    "type": "string"
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+];

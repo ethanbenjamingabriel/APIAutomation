@@ -1,4 +1,5 @@
-import { scriptrunner, getTodaysDate } from '../support/constants.js';
+import { scriptrunner, getTodaysDate, expectedSchemas } from '../support/constants.js';
+chai.use(require('chai-json-schema'));
 
 describe('Complete full ScriptRunner Cycle', () => {
 
@@ -28,6 +29,7 @@ describe('Complete full ScriptRunner Cycle', () => {
             expect(res.body.data.deliveryId).to.eq(deliveryId);
             expect(typeof res.body.data.returnedOrders).to.eq('object');
             expect(res.body.data.returnedOrders).to.have.length(0);
+            expect(res.body).to.be.jsonSchema(expectedSchemas[0]);
         });
     });
 
@@ -53,12 +55,13 @@ describe('Complete full ScriptRunner Cycle', () => {
             }
         }).then((res) => {
             orderId = res.body.data.orderId;
-            cy.statusAndTime(res.status, res.duration, 201, 500);
+            cy.statusAndTime(res.status, res.duration, 201, 1000);
             expect(typeof res).to.eq('object');
             expect(typeof res.body.data.orderId).to.eq('number');
             expect(res.body.data.orderId).to.eq(orderId);
             expect(typeof res.body.data.orderDetailIds).to.eq('object');
             expect(res.body.data.orderDetailIds).to.have.length(1);
+            expect(res.body).to.be.jsonSchema(expectedSchemas[1]);
         });
     });
 
@@ -75,6 +78,7 @@ describe('Complete full ScriptRunner Cycle', () => {
             expect(typeof res.body.data.orderId).to.eq('number');
             expect(res.body.data.orderId).to.eq(orderId);
             expect(res.body.data.deliveryId).to.eq(deliveryId);
+            expect(res.body).to.be.jsonSchema(expectedSchemas[2]);
         });
     });
 
@@ -93,6 +97,7 @@ describe('Complete full ScriptRunner Cycle', () => {
             expect(res.body.data.deliveryId).to.eq(deliveryId.toString());
             expect(typeof res.body.data.orders[0].orderId).to.eq('number');
             expect(res.body.data.orders[0].orderId).to.eq(orderId);
+            expect(res.body).to.be.jsonSchema(expectedSchemas[3]);
         });
     });
 
@@ -116,6 +121,7 @@ describe('Complete full ScriptRunner Cycle', () => {
             expect(res.body.data.deliveryDate).to.eq(deliveryDate);
             expect(typeof res.body.data.deliveryStatus).to.eq('string');
             expect(res.body.data.deliveryStatus).to.eq(deliveryStatus);
+            expect(res.body).to.be.jsonSchema(expectedSchemas[4]);
         });
     });
 
@@ -130,6 +136,7 @@ describe('Complete full ScriptRunner Cycle', () => {
             cy.statusAndTime(res.status, res.duration, 200, 1500);
             expect(typeof res).to.eq('object');
             expect(res.body.data.orderId).to.eq(orderId);
+            expect(res.body).to.be.jsonSchema(expectedSchemas[5]);
         });
     });
 

@@ -28,10 +28,6 @@ This repository will hold test cases to test various API requests for the Script
    ```sh
    cd your/project/path
    ```
-3. Install Cypress
-   ```sh
-   npm install cypress --save-dev
-   ```
 4. Open Cypress
    ```sh
    npx cypress open

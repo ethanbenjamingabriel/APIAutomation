@@ -1,4 +1,5 @@
-import { scriptrunner, getTodaysDate } from '../support/constants.js';
+import { scriptrunner, getTodaysDate, expectedErrorSchemas } from '../support/constants.js';
+chai.use(require('chai-json-schema'));
 
 describe('Test Script Runner API Calls for Error Codes', () => {
 
@@ -32,6 +33,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
             expect(res.body.errors[0].status).to.eq('423');
             cy.statusAndTime(res.status, res.duration, 423, 500);
             expect(typeof res).to.eq('object');
+            expect(res.body).to.be.jsonSchema(expectedErrorSchemas[0]);
         });
     });
 
@@ -93,6 +95,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
                 }).then((res) => {
                     cy.statusAndTime(res.status, res.duration, 405, 500);
                     expect(typeof res).to.eq('object');
+                    expect(res.body).to.be.jsonSchema(expectedErrorSchemas[1]);
                 });
             });
         });
@@ -125,6 +128,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
             }).then((res) => {
                 cy.statusAndTime(res.status, res.duration, 404, 500);
                 expect(typeof res).to.eq('object');
+                expect(res.body).to.be.jsonSchema(expectedErrorSchemas[2]);
             });
         })
     });
@@ -149,6 +153,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
             }).then((res) => {
                 cy.statusAndTime(res.status, res.duration, 401, 500);
                 expect(typeof res).to.eq('object');
+                expect(res.body).to.be.jsonSchema(expectedErrorSchemas[3]);
             });
         })
     });
@@ -180,6 +185,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
             }).then((res) => {
                 cy.statusAndTime(res.status, res.duration, 400, 2000);
                 expect(typeof res).to.eq('object');
+                expect(res.body).to.be.jsonSchema(expectedErrorSchemas[4]);
             });
         });
     });
@@ -236,6 +242,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
                     }).then((res) => {
                         cy.statusAndTime(res.status, res.duration, 404, 500);
                         expect(typeof res).to.eq('object');
+                        expect(res.body).to.be.jsonSchema(expectedErrorSchemas[5]);
                     });
                 });
             });
@@ -295,6 +302,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
                     }).then((res) => {
                         cy.statusAndTime(res.status, res.duration, 404, 500);
                         expect(typeof res).to.eq('object');
+                        expect(res.body).to.be.jsonSchema(expectedErrorSchemas[6]);
                     });
                 });
             });
