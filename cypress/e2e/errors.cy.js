@@ -31,6 +31,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
         }).then((res) => {
             expect(res.body.errors[0].status).to.eq('423');
             cy.statusAndTime(res.status, res.duration, 423, 500);
+            expect(typeof res).to.eq('object');
         });
     });
 
@@ -91,6 +92,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
                     failOnStatusCode : false
                 }).then((res) => {
                     cy.statusAndTime(res.status, res.duration, 405, 500);
+                    expect(typeof res).to.eq('object');
                 });
             });
         });
@@ -122,6 +124,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
                 failOnStatusCode : false
             }).then((res) => {
                 cy.statusAndTime(res.status, res.duration, 404, 500);
+                expect(typeof res).to.eq('object');
             });
         })
     });
@@ -145,6 +148,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
                 failOnStatusCode : false
             }).then((res) => {
                 cy.statusAndTime(res.status, res.duration, 401, 500);
+                expect(typeof res).to.eq('object');
             });
         })
     });
@@ -175,6 +179,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
                 failOnStatusCode : false
             }).then((res) => {
                 cy.statusAndTime(res.status, res.duration, 400, 2000);
+                expect(typeof res).to.eq('object');
             });
         });
     });
@@ -230,6 +235,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
                         failOnStatusCode : false
                     }).then((res) => {
                         cy.statusAndTime(res.status, res.duration, 404, 500);
+                        expect(typeof res).to.eq('object');
                     });
                 });
             });
@@ -288,6 +294,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
                         failOnStatusCode : false
                     }).then((res) => {
                         cy.statusAndTime(res.status, res.duration, 404, 500);
+                        expect(typeof res).to.eq('object');
                     });
                 });
             });
