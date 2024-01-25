@@ -36,3 +36,6 @@ This repository will hold test cases to test various API requests for the Script
    ```sh
    npx cypress open
    ```
+5. Select E2E Testing
+6.  Choose Electron or Google Chrome
+7. Open Spec to run tests
