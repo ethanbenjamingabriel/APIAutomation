@@ -6,14 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "open": "npx cypress open",
-    "start": "npx cypress run --browser electron --headless"
+    "start": "npx cypress run --browser electron --headless",
+    "report": "npx cypress run --reporter cypress-mochawesome-reporter --reporter-options autoOpen=true"
   },
   "author": "Ethan Gabriel",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.6.3"
+    "cypress": "^13.6.3",
+    "cypress-mochawesome-reporter": "^3.8.1",
+    "mochawesome": "^7.1.3"
   },
   "dependencies": {
-    "chai-json-schema": "^1.5.1"
+    "-": "^0.0.1",
+    "chai-json-schema": "^1.5.1",
+    "save-dev": "^0.0.1-security"
   }
 }
