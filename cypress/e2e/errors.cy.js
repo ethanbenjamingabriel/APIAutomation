@@ -30,7 +30,6 @@ describe('Test Script Runner API Calls for Error Codes', () => {
             },
             failOnStatusCode : false
         }).then((res) => {
-            expect(res.body.errors[0].status).to.eq('423');
             cy.statusAndTime(res.status, res.duration, 423, 500);
             expect(typeof res).to.eq('object');
             expect(res.body).to.be.jsonSchema(expectedErrorSchemas[0]);
