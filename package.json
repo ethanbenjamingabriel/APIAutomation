@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx cypress run browser chrome,electron --headless"
+    "open": "npx cypress open",
+    "start": "npx cypress run --browser electron --headless"
   },
   "author": "Ethan Gabriel",
   "license": "ISC",
