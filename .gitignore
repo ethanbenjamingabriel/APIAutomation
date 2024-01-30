@@ -1,4 +1,3 @@
 cypress.env.json
-cypress/reports/html/screenshots
-cypress/reports/html/index.html
+cypress/reports
 cypress/screenshots
