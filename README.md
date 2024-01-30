@@ -39,10 +39,7 @@ This repository will hold test cases to test various API requests for the Script
    ```sh
    npm run start
    ```
-5.1 Open Cypress Dashboard (Option 2 to run tests)
+5. Open Cypress Dashboard (Option 2 to run tests)
    ```sh
    npm run open
    ```
-5.2. Select E2E Testing
-5.3. Choose Electron or Google Chrome
-5.4. Open Spec to run tests
