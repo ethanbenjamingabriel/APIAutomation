@@ -28,6 +28,13 @@ This repository will hold test cases to test various API requests for the Script
    ```sh
    cd your/project/path
    ```
+3. In the root directory, create a new file named ```cypress.env.json``` and add the following contents
+   ```sh
+   {
+    "accessToken": "<add token here>",
+    "baseUrl": "https://api.staging.script-runner.com"
+   }
+   ```
 4. Open Cypress Dashboard (Option 1 to run tests)
    ```sh
    npm run open
