@@ -17,6 +17,10 @@ This repository will hold test cases to test various API requests for the Script
   ```sh
   https://code.visualstudio.com/download
   ```
+* Cypress Tutorials (YouTube Playlist)
+  ```sh
+  https://www.youtube.com/playlist?list=PLFGoYjJG_fqo3DcVuA-YDfyhrxY4ChGqm
+  ```
 
 ### Installation
 
