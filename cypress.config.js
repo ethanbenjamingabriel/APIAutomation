@@ -14,6 +14,7 @@ module.exports = defineConfig({
       on('after:run', async () => {
         console.log('override after:run');
         await afterRunHook();
-      });    },
+      });    
+    },
   },
 });
