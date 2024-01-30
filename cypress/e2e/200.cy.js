@@ -9,7 +9,7 @@ describe('Complete full ScriptRunner Cycle', () => {
     var orderId = 0; 
 
     it('Create Delivery', () => {
-        cy.apiRequest(methods.post, `${Cypress.env('baseUrl')}/deliveries`, createDeliveryBody(deliveryDate), true).then((res) => {
+        cy.apiRequest(methods.post, 'deliveries', createDeliveryBody(deliveryDate)).then((res) => {
             deliveryId = res.body.data.deliveryId;
             cy.statusAndTime(res.status, res.duration, 201, 500);
             expect(typeof res).to.eq('object');
@@ -25,7 +25,7 @@ describe('Complete full ScriptRunner Cycle', () => {
     });
 
     it('Create Order', () => {
-        cy.apiRequest(methods.post, `${Cypress.env('baseUrl')}/orders`, createOrderBody(deliveryId), true).then((res) => {
+        cy.apiRequest(methods.post, 'orders', createOrderBody(deliveryId)).then((res) => {
             orderId = res.body.data.orderId;
             cy.statusAndTime(res.status, res.duration, 201, 1000);
             expect(typeof res).to.eq('object');
@@ -38,7 +38,7 @@ describe('Complete full ScriptRunner Cycle', () => {
     });
 
     it('Get Order', () => {
-        cy.apiRequest(methods.get, `${Cypress.env('baseUrl')}/orders/${orderId}`, null, true).then((res) => {
+        cy.apiRequest(methods.get, `orders/${orderId}`).then((res) => {
             cy.statusAndTime(res.status, res.duration, 200, 500);
             expect(typeof res).to.eq('object');
             expect(typeof res.body.data.orderId).to.eq('number');
@@ -49,7 +49,7 @@ describe('Complete full ScriptRunner Cycle', () => {
     });
 
     it('Get Delivery', () => {
-        cy.apiRequest(methods.get, `${Cypress.env('baseUrl')}/deliveries/${deliveryId}`, null, true).then((res) => {
+        cy.apiRequest(methods.get, `deliveries/${deliveryId}`).then((res) => {
             cy.statusAndTime(res.status, res.duration, 200, 500);
             expect(typeof res).to.eq('object');
             expect(res.body).to.have.property('data');
@@ -63,7 +63,7 @@ describe('Complete full ScriptRunner Cycle', () => {
 
     it('Update Delivery', () => {
         deliveryStatus = 'PICKUP_READY';
-        cy.apiRequest(methods.put, `${Cypress.env('baseUrl')}/deliveries/${deliveryId}`, updateDeliveryBody(deliveryStatus), null, true).then((res) => {
+        cy.apiRequest(methods.put, `deliveries/${deliveryId}`, updateDeliveryBody(deliveryStatus)).then((res) => {
             cy.statusAndTime(res.status, res.duration, 200, 2000);
             expect(typeof res).to.eq('object');
             expect(typeof res.body.data.deliveryId).to.eq('number');
@@ -77,7 +77,7 @@ describe('Complete full ScriptRunner Cycle', () => {
     });
 
     it('Delete Order', () => {
-        cy.apiRequest(methods.delete, `${Cypress.env('baseUrl')}/orders/${orderId}`).then((res) => {
+        cy.apiRequest(methods.delete, `orders/${orderId}`).then((res) => {
             cy.statusAndTime(res.status, res.duration, 200, 1500);
             expect(typeof res).to.eq('object');
             expect(res.body.data.orderId).to.eq(orderId);
@@ -86,7 +86,7 @@ describe('Complete full ScriptRunner Cycle', () => {
     });
 
     it('Delete Delivery', () => {
-        cy.apiRequest(methods.delete, `${Cypress.env('baseUrl')}/deliveries/${deliveryId}`).then((res) => {
+        cy.apiRequest(methods.delete, `deliveries/${deliveryId}`).then((res) => {
             cy.statusAndTime(res.status, res.duration, 200, 1500);
             expect(res.body).to.eq('OK');
         });

@@ -3,14 +3,14 @@ Cypress.Commands.add('statusAndTime', (status, responseTime, code, duration) => 
     expect(responseTime).to.be.lessThan(duration);
 });
 
-Cypress.Commands.add('apiRequest', (methodInput, urlInput, bodyInput, failOnStatusCodeInput) => {
+Cypress.Commands.add('apiRequest', (method, endpoint, body, failOnStatusCode=true) => {
     cy.request({
-        method : methodInput,
-        url : urlInput,
+        method,
+        url : `${Cypress.env('baseUrl')}/${endpoint}`,
         headers : {
             'Authorization' : `${Cypress.env('accessToken')}`
         }, 
-        body : bodyInput,
-        failOnStatusCode : failOnStatusCodeInput
+        body,
+        failOnStatusCode
     });
 });

@@ -2,7 +2,7 @@ export const methods = {
     post: 'POST',
     get: 'GET',
     put: 'PUT',
-    delete: 'delete',
+    delete: 'DELETE',
     patch: 'PATCH'
 }
 
@@ -49,22 +49,6 @@ export function createOrderBody(deliveryId) {
 export function updateDeliveryBody(deliveryStatus) {
     return {
         'deliveryStatus' : `${deliveryStatus}`
-    };
-}
-
-export function createOrder423Body() {
-    return {
-        "deliveryId": '1234',
-        "paymentType": "SR_CARD",
-        "customerName": "Mr Godzilla",
-        "customerPhone": 4165555296,
-        "customerAddress": "6 King Street West, Toronto, Ontario",
-        "detail": [
-            {
-            "barcode": 13,
-            "price": 1.3
-            }
-        ]
     };
 }
 
