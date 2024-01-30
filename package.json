@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "open": "npx cypress open",
-    "start": "npx cypress run",
+    "start": "npx cypress run --record",
     "report": "npx cypress run --reporter cypress-mochawesome-reporter --reporter-options autoOpen=true",
     "chrome": "npx cypress run --browser chrome",
     "electron": "npx cypress run --browser electron"

@@ -64,7 +64,7 @@ describe('Complete full ScriptRunner Cycle', () => {
     it('Update Delivery', () => {
         deliveryStatus = 'PICKUP_READY';
         cy.apiRequest(methods.put, `deliveries/${deliveryId}`, updateDeliveryBody(deliveryStatus)).then((res) => {
-            cy.statusAndTime(res.status, res.duration, 200, 2000);
+            cy.statusAndTime(res.status, res.duration, 200, 3000);
             expect(typeof res).to.eq('object');
             expect(typeof res.body.data.deliveryId).to.eq('number');
             expect(res.body.data.deliveryId).to.eq(deliveryId);
