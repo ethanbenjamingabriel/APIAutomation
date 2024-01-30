@@ -45,7 +45,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
         cy.apiRequest(methods.post, 'deliveries', createDeliveryBody(deliveryDate)).then((res) => {
             deliveryId = res.body.data.deliveryId;
             cy.request({
-                method : 'GET',
+                method : methods.get,
                 url : `${Cypress.env('baseUrl')}/deliveries/${deliveryId}`,
                 failOnStatusCode : false
             }).then((res) => {
