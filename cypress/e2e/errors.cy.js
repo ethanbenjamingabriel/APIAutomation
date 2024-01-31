@@ -1,4 +1,4 @@
-import { methods, getTodaysDate, expectedErrorSchemas, createDeliveryBody, createOrderBody, updateDeliveryBody } from '../support/constants.js';
+import { methods, getTodaysDate, expectedErrorSchemas, createDeliveryBody, createOrderBody, updateDeliveryBody, baseUrl } from '../support/constants.js';
 chai.use(require('chai-json-schema'));
 
 describe('Test Script Runner API Calls for Error Codes', () => {
@@ -46,7 +46,7 @@ describe('Test Script Runner API Calls for Error Codes', () => {
             deliveryId = res.body.data.deliveryId;
             cy.request({
                 method : methods.get,
-                url : `${Cypress.env('baseUrl')}/deliveries/${deliveryId}`,
+                url : `${baseUrl}/deliveries/${deliveryId}`,
                 failOnStatusCode : false
             }).then((res) => {
                 cy.statusAndTime(res.status, res.duration, 401, 500);
