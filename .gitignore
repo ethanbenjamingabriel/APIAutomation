@@ -1,5 +1,6 @@
 cypress/reports
 cypress/screenshots
+cypress.env.json
 
 
 

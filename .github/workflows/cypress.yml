@@ -14,12 +14,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: console
-        run:
-          echo "MY_SECRET=${{ secrets.BEARER_TOKEN }}" >> $GITHUB_ENV
       - name: Cypress run
         uses: cypress-io/github-action@v6
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}
+          CYPRESS_accessToken: ${{ secrets.BEARER_TOKEN }}

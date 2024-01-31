@@ -6,13 +6,13 @@ Cypress.Commands.add('statusAndTime', (status, responseTime, code, duration) => 
 });
 
 Cypress.Commands.add('apiRequest', (method, endpoint, body, failOnStatusCode=true) => {
+    const authToken = Cypress.env('accessToken')
 
-    console.log("🚀 ~ Cypress.Commands.add ~ process.env.BEARER_TOKEN:", process.env.BEARER_TOKEN)
     cy.request({
         method,
         url : `${baseUrl}/${endpoint}`,
         headers : {
-            'Authorization' : `Bearer ${process.env.BEARER_TOKEN}`
+            'Authorization' : `Bearer ${authToken}`
         }, 
         body,
         failOnStatusCode
