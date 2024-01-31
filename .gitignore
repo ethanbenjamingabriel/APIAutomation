@@ -1,6 +1,7 @@
 cypress/reports
 cypress/screenshots
 cypress.env.json
+DS_Store
 
 
 
