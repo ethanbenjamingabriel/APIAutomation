@@ -32,7 +32,8 @@ This repository will hold test cases to test various API requests for the Script
    ```sh
    cd your/project/path
    ```
-3. In the root directory, create a new file named ```cypress.env.json``` and add the following contents
+3. In the root directory, create a new file named ```cypress.env.json``` and add the following contents in the below code block. For local testing, make sure to include your access token between the quotations (do not push your token to GitHub!)
+
    ```sh
    {
     "accessToken": ""
