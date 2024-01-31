@@ -4,7 +4,7 @@
   "description": "This is for cypress API automation practice",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1", 
+    "test": "echo \"Error: no test specified\" && exit 1",
     "open": "npx cypress open",
     "start": "npx cypress run --reporter cypress-mochawesome-reporter --reporter-options autoOpen=true",
     "chrome": "npx cypress run --browser chrome",

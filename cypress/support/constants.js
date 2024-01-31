@@ -1,3 +1,5 @@
+export const baseUrl = "https://api.staging.script-runner.com";
+
 export const methods = {
     post: 'POST',
     get: 'GET',
