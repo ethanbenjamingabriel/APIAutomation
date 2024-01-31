@@ -6,6 +6,8 @@ Cypress.Commands.add('statusAndTime', (status, responseTime, code, duration) => 
 });
 
 Cypress.Commands.add('apiRequest', (method, endpoint, body, failOnStatusCode=true) => {
+
+    console.log("🚀 ~ Cypress.Commands.add ~ process.env.BEARER_TOKEN:", process.env.BEARER_TOKEN)
     cy.request({
         method,
         url : `${baseUrl}/${endpoint}`,
