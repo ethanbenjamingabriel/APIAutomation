@@ -39,11 +39,15 @@ This repository will hold test cases to test various API requests for the Script
     "accessToken": ""
    }
    ```
-4. Run Cypress Reporter (option 1 to run tests)
+4. Install node modules
+   ```sh
+   npm i
+   ```
+5. Run Cypress Reporter (option 1 to run tests)
    ```sh
    npm run start
    ```
-5. Open Cypress Dashboard (Option 2 to run tests)
+6. Open Cypress Dashboard (Option 2 to run tests)
    ```sh
    npm run open
    ```
