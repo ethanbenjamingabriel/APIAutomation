@@ -10,7 +10,7 @@ Cypress.Commands.add('apiRequest', (method, endpoint, body, failOnStatusCode=tru
         method,
         url : `${baseUrl}/${endpoint}`,
         headers : {
-            'Authorization' : `${process.env.BEARER_TOKEN}`
+            'Authorization' : `Bearer ${process.env.BEARER_TOKEN}`
         }, 
         body,
         failOnStatusCode
