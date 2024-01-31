@@ -35,8 +35,7 @@ This repository will hold test cases to test various API requests for the Script
 3. In the root directory, create a new file named ```cypress.env.json``` and add the following contents
    ```sh
    {
-    "accessToken": "<add token here>",
-    "baseUrl": "https://api.staging.script-runner.com"
+    "accessToken": ""
    }
    ```
 4. Run Cypress Reporter (option 1 to run tests)

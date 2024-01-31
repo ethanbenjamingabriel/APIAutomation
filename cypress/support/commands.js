@@ -6,7 +6,7 @@ Cypress.Commands.add('statusAndTime', (status, responseTime, code, duration) => 
 });
 
 Cypress.Commands.add('apiRequest', (method, endpoint, body, failOnStatusCode=true) => {
-    const authToken = Cypress.env('accessToken')
+    const authToken = Cypress.env('accessToken');
 
     cy.request({
         method,
