@@ -7,7 +7,7 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false # https://github.com/cypress-io/github-action/issues/48
+      fail-fast: false
       matrix:
         containers: [1]
     steps:
