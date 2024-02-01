@@ -15,6 +15,6 @@ Cypress.Commands.add('apiRequest', (method, endpoint, body, failOnStatusCode=tru
             'Authorization' : `Bearer ${authToken}`
         }, 
         body,
-        failOnStatusCode
+        failOnStatusCode //test
     });
 });
