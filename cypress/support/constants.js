@@ -28,7 +28,7 @@ export function getTodaysDate() {
 
 export function createDeliveryBody(deliveryDate) {
     return {
-        'deliveryDate' : `${deliveryDate}`
+        "deliveryDate" : `${deliveryDate}`
     };
 }
 
@@ -50,7 +50,7 @@ export function createOrderBody(deliveryId) {
 
 export function updateDeliveryBody(deliveryStatus) {
     return {
-        'deliveryStatus' : `${deliveryStatus}`
+        "deliveryStatus" : `${deliveryStatus}`
     };
 }
 

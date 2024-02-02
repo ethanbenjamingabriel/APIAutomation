@@ -4,7 +4,7 @@ const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/li
 module.exports = defineConfig({
   projectId: 'xqf4pj',
   reporter: 'cypress-mochawesome-reporter',
-  retries: 3,
+  retries: 1,
   e2e: {
     setupNodeEvents(on, config) {
       on('before:run', async (details) => {
