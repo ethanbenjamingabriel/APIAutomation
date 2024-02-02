@@ -19,7 +19,7 @@ export function getTodaysDate() {
     }
 
     if (day < 10) {
-        day = '0' + date;
+        day = '0' + day;
     }
 
     const deliveryDate = `${year}-${month}-${day}`;
