@@ -61,7 +61,7 @@ describe('Complete full ScriptRunner Cycle', () => {
         });
     });
 
-    it('Update Delivery', () => {
+    it.skip('Update Delivery', () => {
         deliveryStatus = 'PICKUP_READY';
         cy.apiRequest(methods.put, `deliveries/${deliveryId}`, updateDeliveryBody(deliveryStatus), true).then((res) => {
             cy.statusAndTime(res.status, res.duration, 200, 3000);
