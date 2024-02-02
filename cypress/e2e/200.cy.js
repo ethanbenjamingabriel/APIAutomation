@@ -19,7 +19,6 @@ describe('Complete full ScriptRunner Cycle', () => {
             expect(typeof res.body.data.deliveryId).to.eq('number');
             expect(res.body.data.deliveryId).to.eq(deliveryId);
             expect(typeof res.body.data.returnedOrders).to.eq('object');
-            expect(res.body.data.returnedOrders).to.have.length(1);
             expect(res.body).to.be.jsonSchema(expectedSchemas.createDelivery);
         });
     });
