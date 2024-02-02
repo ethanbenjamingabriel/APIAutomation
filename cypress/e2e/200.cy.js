@@ -19,7 +19,7 @@ describe('Complete full ScriptRunner Cycle', () => {
             expect(typeof res.body.data.deliveryId).to.eq('number');
             expect(res.body.data.deliveryId).to.eq(deliveryId);
             expect(typeof res.body.data.returnedOrders).to.eq('object');
-            expect(res.body.data.returnedOrders).to.have.length(0);
+            expect(res.body.data.returnedOrders).to.have.length(1);
             expect(res.body).to.be.jsonSchema(expectedSchemas.createDelivery);
         });
     });
@@ -61,7 +61,7 @@ describe('Complete full ScriptRunner Cycle', () => {
         });
     });
 
-    it.skip('Update Delivery', () => {
+    it('Update Delivery', () => {
         deliveryStatus = 'PICKUP_READY';
         cy.apiRequest(methods.put, `deliveries/${deliveryId}`, updateDeliveryBody(deliveryStatus), true).then((res) => {
             cy.statusAndTime(res.status, res.duration, 200, 3000);
@@ -86,9 +86,13 @@ describe('Complete full ScriptRunner Cycle', () => {
     });
 
     it('Delete Delivery', () => {
-        cy.apiRequest(methods.delete, `deliveries/${deliveryId}`, null, true).then((res) => {
-            cy.statusAndTime(res.status, res.duration, 200, 1500);
-            expect(res.body).to.eq('OK');
+        cy.wait(1000);
+        cy.apiRequest(methods.get, `deliveries/${deliveryId}`, null, true).then((res) => {
+            expect(res.body.data.deliveryId).to.eq(deliveryId.toString());
+            cy.apiRequest(methods.delete, `deliveries/${deliveryId}`, null, true).then((res) => {
+                cy.statusAndTime(res.status, res.duration, 200, 1500);
+                expect(res.body).to.eq('OK');
+            });
         });
     });
 
