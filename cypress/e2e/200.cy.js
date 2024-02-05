@@ -6,7 +6,7 @@ describe('Complete full ScriptRunner Cycle', () => {
     const deliveryDate = getTodaysDate();
     var deliveryId = 0;
     var deliveryStatus = '';
-    var orderId = 0; 
+    var orderId = 0;
 
     it('Create Delivery', () => {
         cy.apiRequest(methods.post, 'deliveries', createDeliveryBody(deliveryDate), true).then((res) => {
