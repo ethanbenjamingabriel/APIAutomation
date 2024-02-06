@@ -3,7 +3,7 @@ chai.use(require('chai-json-schema'));
 
 describe('Complete full ScriptRunner Cycle', () => {
 
-    const deliveryDate = getTodaysDate(); //test
+    const deliveryDate = getTodaysDate();
     var deliveryId = 0;
     var deliveryStatus = '';
     var orderId = 0;
