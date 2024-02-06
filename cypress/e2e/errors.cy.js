@@ -4,7 +4,7 @@ chai.use(require('chai-json-schema'));
 describe('Test Script Runner API Calls for Error Codes', () => {
 
     const deliveryDate = getTodaysDate();
-    var deliveryId = 0;
+    var deliveryId = 0; // test
     var deliveryStatus = '';
     var orderId = 0; 
 
