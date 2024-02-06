@@ -11,7 +11,7 @@ describe('Complete full ScriptRunner Cycle', () => {
     it('Create Delivery', () => {
         cy.apiRequest(methods.post, 'deliveries', createDeliveryBody(deliveryDate), true).then((res) => {
             deliveryId = res.body.data.deliveryId;
-            cy.statusAndTime(res.status, res.duration, 201, 500);
+            cy.statusAndTime(res.status, res.duration, 400, 500); // test fail: 201
             expect(typeof res).to.eq('object');
             expect(res.body).to.have.property('data');
             expect(typeof res.body.data.deliveryDate).to.eq('string');
