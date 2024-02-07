@@ -33,7 +33,7 @@ pipeline {
 
         stage('Run Cypress Tests') {
             steps {
-                sh 'npx cypress run'
+                sh 'npx cypress run --browser chrome'
                 /*
                 script {
                     sh 'npx cypress run'
