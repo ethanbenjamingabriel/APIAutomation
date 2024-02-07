@@ -8,6 +8,7 @@ pipeline {
     } 
 
     stages {
+        /*
         stage('Checkout') {
             steps {
                 script {
@@ -15,22 +16,29 @@ pipeline {
                 }
             }
         }
+        */
 
         stage('Install Dependencies') {
             steps {
+                sh 'npm i'
+                /*
                 script {
                     nodejs('nodejs') {
                         sh 'npm i'
                     }
                 }
+                */
             }
         }
 
         stage('Run Cypress Tests') {
             steps {
+                sh 'npx cypress run'
+                /*
                 script {
                     sh 'npx cypress run'
                 }
+                */
             }
         }
     }
