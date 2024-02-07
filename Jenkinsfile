@@ -1,6 +1,12 @@
 pipeline {
     agent any
 
+    tools {nodejs "Node12"}
+
+    environment {
+        CHROME_BIN = '/bin/google-chrome'
+    } 
+
     stages {
         stage('Checkout') {
             steps {
@@ -14,7 +20,7 @@ pipeline {
             steps {
                 script {
                     nodejs('nodejs') {
-                        sh 'npm install'
+                        sh 'npm i'
                     }
                 }
             }
