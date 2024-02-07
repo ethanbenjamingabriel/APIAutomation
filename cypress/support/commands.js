@@ -5,7 +5,7 @@ Cypress.Commands.add('statusAndTime', (status, responseTime, code, duration) => 
     expect(responseTime).to.be.lessThan(duration);
 });
 
-Cypress.Commands.add('apiRequest', (method, endpoint, body, failOnStatusCode) => {
+Cypress.Commands.add('apiRequest', (method, endpoint, body, failOnStatusCodeInput) => {
     const authToken = Cypress.env('accessToken');
 
     cy.request({
@@ -15,6 +15,6 @@ Cypress.Commands.add('apiRequest', (method, endpoint, body, failOnStatusCode) =>
             'Authorization' : `Bearer ${authToken}`
         }, 
         body,
-        failOnStatusCode 
+        failOnStatusCode: failOnStatusCodeInput
     });
 });
