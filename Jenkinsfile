@@ -4,19 +4,11 @@ pipeline {
     tools {nodejs "Node12"}
 
     environment {
-        CHROME_BIN = '/bin/google-chrome'
+        //CHROME_BIN = '/bin/google-chrome'
+        accessToken = credentials('accessToken')
     } 
 
     stages {
-        /*
-        stage('Checkout') {
-            steps {
-                script {
-                    checkout scm
-                }
-            }
-        }
-        */
 
         stage('Install Dependencies') {
             steps {
