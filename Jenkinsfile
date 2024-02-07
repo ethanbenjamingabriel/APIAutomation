@@ -5,7 +5,8 @@ pipeline {
 
     environment {
         //CHROME_BIN = '/bin/google-chrome'
-        accessToken = credentials('accessToken')
+        CYPRESS_accessToken = credentials('accessToken')
+        CYPRESS_RECORD_KEY = credentials('recordKey')
     } 
 
     stages {
@@ -25,7 +26,7 @@ pipeline {
 
         stage('Run Cypress Tests') {
             steps {
-                sh 'npx cypress run --browser chrome'
+                sh 'npx cypress run --record --key ${CYPRESS_RECORD_KEY}'
                 /*
                 script {
                     sh 'npx cypress run'
