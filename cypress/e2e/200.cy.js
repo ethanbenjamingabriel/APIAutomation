@@ -4,7 +4,7 @@ chai.use(require('chai-json-schema'));
 describe('Complete full ScriptRunner Cycle', () => {
 
     const deliveryDate = getTodaysDate();
-    var deliveryId = 0; //test
+    var deliveryId = 0;
     var deliveryStatus = '';
     var orderId = 0;
 
